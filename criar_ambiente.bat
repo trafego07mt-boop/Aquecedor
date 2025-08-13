@@ -2,4 +2,6 @@
 
 cls
 python -m venv .venv
-python -m pip install -U -q -r requirements.txt
+call .venv\Scripts\activate
+python -m pip install -U -q pip
+pip install -U -q -r requirements.txt
