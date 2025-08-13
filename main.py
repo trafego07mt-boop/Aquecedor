@@ -7,6 +7,7 @@ import time
 
 console = Console()
 console.print("Início:", time.strftime("%H:%M:%S"))
+tempo = time.time() + 30
 
 
 TEXTOS = [
@@ -163,7 +164,7 @@ class Video:
         self.aquecer_por = 1800
 
     def fechar(self):
-        if self.tempo - time.time() >= self.aquecer_por:
+        if time.time() - self.tempo >= self.aquecer_por:
             return True
 
         return False
@@ -205,7 +206,17 @@ def obter_segundos_espera():
         return random.randint(10, 20)
 
 
+def passou_tempo():
+    global tempo
+    global fechar
+
+    if tempo - time.time() <= 30:
+        fechar.click()
+
+
 while True:
+    passou_tempo()
+
     _a = obter_acao(proximo)
     console.print(f"Ação: {_a.nome}")
     _a.click()
