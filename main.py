@@ -154,6 +154,29 @@ _gostou = False
 _comentou = False
 
 
+class Video:
+    def __init__(self):
+        self.like = False
+        self.comentario = False
+        self.tempo = 0
+        self.comentarios = []
+        self.aquecer_por = 1800
+
+    def fechar(self):
+        if self.tempo - time.time() >= self.aquecer_por:
+            return True
+
+        return False
+
+    def gostar(self):
+        self.like = True
+
+    def comentar(self):
+        mensagem = random.choice(TEXTOS)
+        pyautogui.write(mensagem)
+        pyautogui.press("enter")
+
+
 def obter_acao(padrao: Acao = None):
     global _gostou
     global _comentou
