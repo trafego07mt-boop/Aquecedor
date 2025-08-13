@@ -210,8 +210,9 @@ def passou_tempo():
     global tempo
     global fechar
 
-    if tempo - time.time() <= 30:
+    if tempo - time.time() <= 0:
         fechar.click()
+        exit()
 
 
 while True:
