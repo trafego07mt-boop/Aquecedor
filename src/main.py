@@ -7,7 +7,7 @@ import time
 
 console = Console()
 console.print("Início:", time.strftime("%H:%M:%S"))
-tempo = time.time() + 30
+tempo = time.time() + 1800
 
 
 TEXTOS = [
@@ -146,10 +146,10 @@ class Acao:
         pyautogui.KEYBOARD_KEYS
 
 
-proximo = Acao("proximo", 3000, 587)
-like = Acao("like", 2440, 562)
-fechar = Acao("fechar", 1897, 19)
-coment_input = Acao("comentando", 3535, 1011)
+proximo = Acao("proximo", 3008, 578)
+like = Acao("like", 2988, 789)
+fechar = Acao("fechar", 3819, 13)
+coment_input = Acao("comentando", 3556, 1003)
 
 _gostou = False
 _comentou = False
